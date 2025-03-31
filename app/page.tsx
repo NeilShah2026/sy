@@ -35,49 +35,30 @@ export default function LandingPage() {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setFormSubmitting(true)
-
+  
     const formData = new FormData(e.currentTarget)
-    const data = {
-      firstName: formData.get("firstName"),
-      lastName: formData.get("lastName"),
-      email: formData.get("email"),
-      company: formData.get("company"),
-      businessType: formData.get("businessType"),
-      message: formData.get("message"),
-    }
-
-    // In a real implementation, you would send this data to your backend
-    // For example using fetch:
-    /*
+  
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
+      const response = await fetch("https://formspree.io/f/mkgjvazw", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          Accept: "application/json",
         },
-        body: JSON.stringify({
-          ...data,
-          recipient: 'neil@syconsulting.co'
-        }),
-      });
-      
+        body: formData,
+      })
+  
       if (response.ok) {
-        setFormSubmitted(true);
+        setFormSubmitted(true)
       } else {
-        // Handle error
+        console.error("Formspree submission failed")
       }
     } catch (error) {
-      // Handle error
-    }
-    */
-
-    // For demo purposes, we'll simulate a successful submission
-    setTimeout(() => {
+      console.error("Error submitting to Formspree:", error)
+    } finally {
       setFormSubmitting(false)
-      setFormSubmitted(true)
-      console.log("Form submitted with data:", data)
-      console.log("Email would be sent to: neil@syconsulting.co")
-    }, 1500)
+    }
+  }
+  
   }
 
   const serviceInfo = {
