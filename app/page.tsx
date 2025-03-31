@@ -483,25 +483,7 @@ export default function LandingPage() {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-16 items-center justify-items-center">
                 <div className="border border-zinc-800 p-8 w-full h-full flex items-center justify-center hover:border-zinc-600 transition-all">
                   <Image
-                    src="/placeholder-logo.svg"
-                    width={140}
-                    height={70}
-                    alt="Client Logo"
-                    className="h-12 w-auto opacity-70 transition-all hover:opacity-100"
-                  />
-                </div>
-                <div className="border border-zinc-800 p-8 w-full h-full flex items-center justify-center hover:border-zinc-600 transition-all">
-                  <Image
-                    src="/placeholder-logo.svg"
-                    width={140}
-                    height={70}
-                    alt="Client Logo"
-                    className="h-12 w-auto opacity-70 transition-all hover:opacity-100"
-                  />
-                </div>
-                <div className="border border-zinc-800 p-8 w-full h-full flex items-center justify-center hover:border-zinc-600 transition-all">
-                  <Image
-                    src="/placeholder-logo.svg"
+                    src="/wagonwheel.png"
                     width={140}
                     height={70}
                     alt="Client Logo"
