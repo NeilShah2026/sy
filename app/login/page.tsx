@@ -67,10 +67,12 @@ export default function LoginPage() {
         <div className="hidden lg:block lg:w-1/2 relative">
           <div className="absolute inset-0 bg-gradient-to-r from-[#1c1c1c] to-transparent z-10"></div>
           <Image
-            src="/placeholder.svg?height=1080&width=1920"
+            src="/login-background.png"
             alt="S&Y Consulting"
             fill
             className="object-cover"
+            width={1080}
+            height={1920}
             style={{ opacity: 0.7 }}
           />
         </div>
