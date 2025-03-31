@@ -3,27 +3,40 @@ import { NextResponse } from "next/server"
 export async function POST(request: Request) {
   try {
     const body = await request.json()
-    const { firstName, lastName, email, company, businessType, message, recipient } = body
+    const { firstName, lastName, email, company, businessType, message } = body
 
-    // In a real implementation, you would use a service like Nodemailer, SendGrid, etc.
-    // to send an email to the recipient (neil@syconsulting.co)
+    // Prepare the data for Formspree
+    const formData = new URLSearchParams()
+    formData.append("firstName", firstName)
+    formData.append("lastName", lastName)
+    formData.append("email", email)
+    formData.append("company", company || "")
+    formData.append("businessType", businessType || "")
+    formData.append("message", message)
 
-    console.log("Form submission received:")
-    console.log("Name:", firstName, lastName)
-    console.log("Email:", email)
-    console.log("Company:", company)
-    console.log("Business Type:", businessType)
-    console.log("Message:", message)
-    console.log("Recipient:", recipient)
+    // Send POST request to Formspree
+    const res = await fetch("https://formspree.io/f/mkgjvazw", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: formData.toString(),
+    })
 
-    // For demo purposes, we'll just return a success response
+    if (!res.ok) {
+      throw new Error("Formspree request failed")
+    }
+
     return NextResponse.json({
       success: true,
-      message: "Form submission received. We will contact you shortly.",
+      message: "Email sent successfully through Formspree!",
     })
   } catch (error) {
-    console.error("Error processing contact form:", error)
-    return NextResponse.json({ success: false, message: "Failed to process your request." }, { status: 500 })
+    console.error("Error sending email:", error)
+    return NextResponse.json(
+      { success: false, message: "Failed to send email." },
+      { status: 500 }
+    )
   }
 }
-
