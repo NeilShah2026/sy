@@ -523,7 +523,7 @@ export default function LandingPage() {
               <div className="group flex flex-col items-center text-center">
                 <div className="relative h-64 w-64 overflow-hidden rounded-full border border-zinc-800 mb-6">
                   <Image
-                    src="/placeholder.png"
+                    src="/placeholder.svg"
                     width={400}
                     height={400}
                     alt="Neil Shah"
@@ -539,7 +539,7 @@ export default function LandingPage() {
               <div className="group flex flex-col items-center text-center">
                 <div className="relative h-64 w-64 overflow-hidden rounded-full border border-zinc-800 mb-6">
                   <Image
-                    src="/placeholder.png"
+                    src="/placeholder.svg"
                     width={400}
                     height={400}
                     alt="Leyuan Yin"
