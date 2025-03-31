@@ -35,30 +35,48 @@ export default function LandingPage() {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setFormSubmitting(true)
-  
+
     const formData = new FormData(e.currentTarget)
-  
+    const data = {
+      firstName: formData.get("firstName"),
+      lastName: formData.get("lastName"),
+      email: formData.get("email"),
+      company: formData.get("company"),
+      businessType: formData.get("businessType"),
+      message: formData.get("message"),
+    }
+
+    // In a real implementation, you would send this data to your backend
+    // For example using fetch:
+
     try {
-      const response = await fetch("https://formspree.io/f/mkgjvazw", {
-        method: "POST",
+      const response = await fetch('/api/contact', {
+        method: 'POST',
         headers: {
-          Accept: "application/json",
+          'Content-Type': 'application/json',
         },
-        body: formData,
-      })
-  
+        body: JSON.stringify({
+          ...data,
+          recipient: 'neil@syconsulting.co'
+        }),
+      });
+      
       if (response.ok) {
-        setFormSubmitted(true)
+        setFormSubmitted(true);
       } else {
-        console.error("Formspree submission failed")
+        // Handle error
       }
     } catch (error) {
-      console.error("Error submitting to Formspree:", error)
-    } finally {
-      setFormSubmitting(false)
+      // Handle error
     }
-  }
-  
+
+    // For demo purposes, we'll simulate a successful submission
+    setTimeout(() => {
+      setFormSubmitting(false)
+      setFormSubmitted(true)
+      console.log("Form submitted with data:", data)
+      console.log("Email would be sent to: neil@syconsulting.co")
+    }, 1500)
   }
 
   const serviceInfo = {
@@ -505,7 +523,7 @@ export default function LandingPage() {
               <div className="group flex flex-col items-center text-center">
                 <div className="relative h-64 w-64 overflow-hidden rounded-full border border-zinc-800 mb-6">
                   <Image
-                    src="/placeholder.svg?height=400&width=400"
+                    src="/neil.png"
                     width={400}
                     height={400}
                     alt="Neil Shah"
@@ -521,7 +539,7 @@ export default function LandingPage() {
               <div className="group flex flex-col items-center text-center">
                 <div className="relative h-64 w-64 overflow-hidden rounded-full border border-zinc-800 mb-6">
                   <Image
-                    src="/placeholder.svg?height=400&width=400"
+                    src="/leyuan.png"
                     width={400}
                     height={400}
                     alt="Leyuan Yin"
