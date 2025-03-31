@@ -534,8 +534,7 @@ export default function LandingPage() {
                 <h3 className="text-2xl font-light">Neil Shah</h3>
                 <p className="text-zinc-400 font-light mb-4">Co-Founder & Managing Partner</p>
                 <p className="text-zinc-500 font-light max-w-sm">
-                  With over 15 years of experience in strategic consulting, Neil specializes in financial advisory and
-                  operational excellence for local businesses.
+                As the prior TYE Chairman and Business Development Manager, Neil drives growth strategies that deliver real impact for local businesses.
                 </p>
               </div>
               <div className="group flex flex-col items-center text-center">
@@ -570,15 +569,11 @@ export default function LandingPage() {
                 <div className="space-y-4 pt-4">
                   <div className="flex items-center gap-3">
                     <Mail className="h-5 w-5 text-zinc-400" />
-                    <span>neil@syconsulting.co</span>
+                    <span>admin@syconsulting.co</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <Phone className="h-5 w-5 text-zinc-400" />
-                    <span>+1 (555) 123-4567</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <MapPin className="h-5 w-5 text-zinc-400" />
-                    <span>123 Business Avenue, New York, NY 10001</span>
+                    <span>+1 (617) 704-3116</span>
                   </div>
                 </div>
               </div>
