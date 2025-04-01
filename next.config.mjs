@@ -21,6 +21,15 @@ const nextConfig = {
     parallelServerBuildTraces: true,
     parallelServerCompiles: true,
   },
+  async redirects() {
+    return [
+      {
+        source: '/client',
+        destination: 'https://syclient.getzendo.io/',
+        permanent: false,
+      },
+    ]
+  },
 }
 
 mergeConfig(nextConfig, userConfig)
