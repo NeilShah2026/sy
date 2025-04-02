@@ -208,10 +208,7 @@ export default function PrivacyPolicyPage() {
                 </p>
                 <div className="text-zinc-300">
                   <p>S&Y Consulting</p>
-                  <p>123 Business Avenue</p>
-                  <p>New York, NY 10001</p>
                   <p>Email: privacy@syconsulting.co</p>
-                  <p>Phone: +1 (555) 123-4567</p>
                 </div>
               </section>
             </div>

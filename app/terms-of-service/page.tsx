@@ -252,10 +252,7 @@ export default function TermsOfServicePage() {
                 <p className="text-zinc-300 mb-4">If you have any questions about these Terms, please contact us at:</p>
                 <div className="text-zinc-300">
                   <p>S&Y Consulting</p>
-                  <p>123 Business Avenue</p>
-                  <p>New York, NY 10001</p>
                   <p>Email: legal@syconsulting.co</p>
-                  <p>Phone: +1 (555) 123-4567</p>
                 </div>
               </section>
             </div>
