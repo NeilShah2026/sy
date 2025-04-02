@@ -3,7 +3,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { useState, useRef, type FormEvent } from "react"
-import { Calendar, ArrowRight, Mail, Phone, MapPin, ChevronRight, X, CheckCircle } from "lucide-react"
+import { Calendar, ArrowRight, Mail, Phone, MapPin, ChevronRight, X, CheckCircle, LogIn } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 
@@ -323,11 +323,11 @@ export default function LandingPage() {
             </button>
           </nav>
           <Button
-            onClick={() => openModal("consultation")}
+            onClick={() => window.location.href = "https://syconsulting.co/client"}
             className="bg-zinc-800 text-white hover:bg-zinc-700 border-none"
           >
-            <Calendar className="mr-2 h-4 w-4" />
-            Book a Meeting
+            <LogIn className="mr-2 h-4 w-4" />
+            Client Login
           </Button>
         </div>
       </header>
