@@ -588,10 +588,10 @@ export default function LandingPage() {
         <div className="container flex flex-col items-center justify-center gap-6 px-4 md:px-6">
           <Image src="/images/logo.png" alt="S&Y Consulting" width={80} height={32} className="h-8 w-auto" />
           <div className="flex items-center justify-center space-x-8">
-            <Link href="#" className="text-xs text-zinc-500 hover:text-white">
+            <Link href="/privacy-policy" className="text-xs text-zinc-500 hover:text-white">
               Privacy Policy
             </Link>
-            <Link href="#" className="text-xs text-zinc-500 hover:text-white">
+            <Link href="/terms-of-service" className="text-xs text-zinc-500 hover:text-white">
               Terms of Service
             </Link>
             <Link href="#" className="text-xs text-zinc-500 hover:text-white">
