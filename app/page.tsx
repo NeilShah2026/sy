@@ -501,7 +501,7 @@ export default function LandingPage() {
                 </div>
                 <div className="border border-zinc-800 p-8 w-full h-full flex items-center justify-center hover:border-zinc-600 transition-all">
                   <Image
-                    src="/clients/client-placeholder.png"
+                    src="/clients/sakura.png"
                     width={140}
                     height={70}
                     alt="Client Logo"
