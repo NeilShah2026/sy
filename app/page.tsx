@@ -513,6 +513,52 @@ export default function LandingPage() {
           </div>
         </section>
 
+        <section id="testimonials" className="w-full py-20 md:py-28 border-b border-zinc-800">
+          <div className="container px-4 md:px-6">
+            <div className="mx-auto flex max-w-[800px] flex-col items-start space-y-4 mb-12">
+              <h2 className="text-3xl font-light tracking-tight sm:text-4xl">Testimonials</h2>
+              <p className="max-w-[600px] text-zinc-400 text-lg font-light">
+                Hear from local business leaders we've helped.
+              </p>
+            </div>
+
+            <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-3">
+              <blockquote className="border border-zinc-800 p-6 bg-[#111111]">
+                <p className="text-zinc-300 font-light mb-4">“S&Y helped us refine our strategy and significantly increase foot traffic — their insights were invaluable.”</p>
+                <div className="flex items-center gap-3">
+                  <Image src="/clients/wagonwheel.png" width={48} height={48} alt="Wagon Wheel" className="h-12 w-auto" />
+                  <div>
+                    <div className="font-medium">Maya Thompson</div>
+                    <div className="text-zinc-500 text-sm">Owner, Wagon Wheel Cafe</div>
+                  </div>
+                </div>
+              </blockquote>
+
+              <blockquote className="border border-zinc-800 p-6 bg-[#111111]">
+                <p className="text-zinc-300 font-light mb-4">“Their financial recommendations helped stabilize our cash flow and improved our profitability within months.”</p>
+                <div className="flex items-center gap-3">
+                  <Image src="/clients/merrygorounds.png" width={48} height={48} alt="Merry Go Rounds" className="h-12 w-auto" />
+                  <div>
+                    <div className="font-medium">Carlos Rivera</div>
+                    <div className="text-zinc-500 text-sm">Founder, Merry Go Rounds</div>
+                  </div>
+                </div>
+              </blockquote>
+
+              <blockquote className="border border-zinc-800 p-6 bg-[#111111]">
+                <p className="text-zinc-300 font-light mb-4">“Their market analysis gave us the confidence to expand — we saw measurable results quickly.”</p>
+                <div className="flex items-center gap-3">
+                  <Image src="/clients/sakura.png" width={48} height={48} alt="Sakura" className="h-12 w-auto" />
+                  <div>
+                    <div className="font-medium">Aiko Tanaka</div>
+                    <div className="text-zinc-500 text-sm">Owner, Sakura Bistro</div>
+                  </div>
+                </div>
+              </blockquote>
+            </div>
+          </div>
+        </section>
+
         <section id="team" className="w-full py-20 md:py-28 border-b border-zinc-800">
           <div className="container px-4 md:px-6">
             <div className="mx-auto flex max-w-[800px] flex-col items-start space-y-4 mb-12">
