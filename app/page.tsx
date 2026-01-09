@@ -625,12 +625,11 @@ export default function LandingPage() {
                       <div className="flex-shrink-0 w-1 h-full bg-zinc-800"></div>
                       <div className="space-y-4">
                         <blockquote className="text-xl lg:text-2xl text-white font-light leading-relaxed">
-                          "S&Y helped us refine our strategy and significantly increase foot traffic — their insights
-                          were invaluable."
+                          "Neil and Leyuan are some of the most hard-working people we've ever met. Every meeting they're ready and eager to help us and our business, which they've done so immensely!"
                         </blockquote>
                         <div className="flex flex-col gap-1 pt-4">
-                          <div className="font-medium text-white text-lg">Maya Thompson</div>
-                          <div className="text-zinc-400 text-sm tracking-wide">Owner, Wagon Wheel Cafe</div>
+                          <div className="font-medium text-white text-lg">Ed & Ilene Hadfield</div>
+                          <div className="text-zinc-400 text-sm tracking-wide">Owners, Wagon Wheel Cafe</div>
                         </div>
                       </div>
                     </div>
@@ -687,11 +686,11 @@ export default function LandingPage() {
                       <div className="flex-shrink-0 w-1 h-full bg-zinc-800"></div>
                       <div className="space-y-4">
                         <blockquote className="text-xl lg:text-2xl text-white font-light leading-relaxed">
-                          "Their market analysis gave us the confidence to expand — we saw measurable results quickly."
+                          "When Neil and Leyuan first approached me, I'll admit that I was a bit skeptical that two high school students could help my business. However, after working with them, I can say that their professionalism and ability to translate ideas into concrete results is truly impressive! I owe them a huge thank you for the work they have done for Sakura!"
                         </blockquote>
                         <div className="flex flex-col gap-1 pt-4">
-                          <div className="font-medium text-white text-lg">Aiko Tanaka</div>
-                          <div className="text-zinc-400 text-sm tracking-wide">Owner, Sakura Bistro</div>
+                          <div className="font-medium text-white text-lg">Joe</div>
+                          <div className="text-zinc-400 text-sm tracking-wide">Owner, Sakura in Walpole</div>
                         </div>
                       </div>
                     </div>
