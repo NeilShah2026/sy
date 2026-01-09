@@ -686,10 +686,11 @@ export default function LandingPage() {
                       <div className="flex-shrink-0 w-1 h-full bg-zinc-800"></div>
                       <div className="space-y-4">
                         <blockquote className="text-xl lg:text-2xl text-white font-light leading-relaxed">
-                        “When Neil and Leyuan first approached me, I was skeptical. However, after working with them, I was impressed by their professionalism and ability to turn ideas into results. I’m grateful for their work at Sakura.”
+                          "When Neil and Leyuan first approached me, I'll admit that I was a bit skeptical that two high school students could help my business. However, after working with them, I can say that their professionalism and ability to translate ideas into concrete results is truly impressive! I owe them a huge thank you for the work they have done for Sakura!"
+                        </blockquote>
                         <div className="flex flex-col gap-1 pt-4">
                           <div className="font-medium text-white text-lg">Joe</div>
-                          <div className="text-zinc-400 text-sm tracking-wide">Owner, Sakura in Walpole</div>
+                          <div className="text-zinc-400 text-sm tracking-wide">Owner, Sakura Walpole</div>
                         </div>
                       </div>
                     </div>
