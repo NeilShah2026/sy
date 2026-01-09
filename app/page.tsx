@@ -3,7 +3,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { useState, useRef, type FormEvent } from "react"
-import { Calendar, ArrowRight, Mail, Phone, MapPin, ChevronRight, X, CheckCircle, LogIn } from "lucide-react"
+import { ArrowRight, Mail, Phone, ChevronRight, X, CheckCircle, LogIn } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 
@@ -50,19 +50,19 @@ export default function LandingPage() {
     // For example using fetch:
 
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
+      const response = await fetch("/api/contact", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
           ...data,
-          recipient: 'neil@syconsulting.co'
+          recipient: "neil@syconsulting.co",
         }),
-      });
-      
+      })
+
       if (response.ok) {
-        setFormSubmitted(true);
+        setFormSubmitted(true)
       } else {
         // Handle error
       }
@@ -290,7 +290,132 @@ export default function LandingPage() {
   )
 
   return (
-    <div className="flex min-h-screen flex-col bg-[#1c1c1c] text-white">
+    <div className="flex min-h-screen flex-col bg-[#1c1c1c] text-white relative overflow-hidden">
+      <div className="fixed inset-0 z-0 opacity-20">
+        <div className="absolute inset-0 bg-gradient-to-br from-amber-900/10 via-yellow-900/5 to-orange-900/10"></div>
+        <svg
+          className="absolute inset-0 w-full h-full"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 800"
+          preserveAspectRatio="none"
+        >
+          <defs>
+            <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#D4AF37" stopOpacity="0.15" />
+              <stop offset="50%" stopColor="#F5C842" stopOpacity="0.1" />
+              <stop offset="100%" stopColor="#C5A028" stopOpacity="0.15" />
+            </linearGradient>
+            <linearGradient id="gradient2" x1="100%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="#E6C75A" stopOpacity="0.12" />
+              <stop offset="50%" stopColor="#D4AF37" stopOpacity="0.15" />
+              <stop offset="100%" stopColor="#B8960C" stopOpacity="0.12" />
+            </linearGradient>
+            <linearGradient id="gradient3" x1="50%" y1="0%" x2="50%" y2="100%">
+              <stop offset="0%" stopColor="#F5C842" stopOpacity="0.08" />
+              <stop offset="50%" stopColor="#D4AF37" stopOpacity="0.12" />
+              <stop offset="100%" stopColor="#B8960C" stopOpacity="0.08" />
+            </linearGradient>
+            <filter id="blur1">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="40" />
+            </filter>
+            <filter id="blur2">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="60" />
+            </filter>
+          </defs>
+
+          {/* Subtle top flowing wave */}
+          <path
+            d="M0,80 Q360,40 720,80 T1440,80 L1440,0 L0,0 Z"
+            fill="url(#gradient1)"
+            opacity="0.3"
+            filter="url(#blur1)"
+          >
+            <animate
+              attributeName="d"
+              dur="25s"
+              repeatCount="indefinite"
+              values="M0,80 Q360,40 720,80 T1440,80 L1440,0 L0,0 Z;
+                      M0,100 Q360,60 720,100 T1440,100 L1440,0 L0,0 Z;
+                      M0,80 Q360,40 720,80 T1440,80 L1440,0 L0,0 Z"
+            />
+          </path>
+
+          {/* Refined bottom wave */}
+          <path
+            d="M0,720 Q360,680 720,720 T1440,720 L1440,800 L0,800 Z"
+            fill="url(#gradient2)"
+            opacity="0.25"
+            filter="url(#blur1)"
+          >
+            <animate
+              attributeName="d"
+              dur="30s"
+              repeatCount="indefinite"
+              values="M0,720 Q360,680 720,720 T1440,720 L1440,800 L0,800 Z;
+                      M0,700 Q360,740 720,700 T1440,700 L1440,800 L0,800 Z;
+                      M0,720 Q360,680 720,720 T1440,720 L1440,800 L0,800 Z"
+            />
+          </path>
+
+          {/* Elegant middle curve */}
+          <path
+            d="M0,400 Q360,360 720,400 T1440,400"
+            stroke="url(#gradient3)"
+            strokeWidth="1"
+            fill="none"
+            opacity="0.4"
+            filter="url(#blur2)"
+          >
+            <animate
+              attributeName="d"
+              dur="20s"
+              repeatCount="indefinite"
+              values="M0,400 Q360,360 720,400 T1440,400;
+                      M0,420 Q360,380 720,420 T1440,420;
+                      M0,400 Q360,360 720,400 T1440,400"
+            />
+          </path>
+
+          {/* Subtle accent curve */}
+          <path
+            d="M0,300 Q360,280 720,300 T1440,300"
+            stroke="url(#gradient1)"
+            strokeWidth="0.5"
+            fill="none"
+            opacity="0.3"
+            filter="url(#blur2)"
+          >
+            <animate
+              attributeName="d"
+              dur="18s"
+              repeatCount="indefinite"
+              values="M0,300 Q360,280 720,300 T1440,300;
+                      M0,290 Q360,310 720,290 T1440,290;
+                      M0,300 Q360,280 720,300 T1440,300"
+            />
+          </path>
+
+          {/* Delicate accent curve */}
+          <path
+            d="M0,500 Q360,520 720,500 T1440,500"
+            stroke="url(#gradient2)"
+            strokeWidth="0.5"
+            fill="none"
+            opacity="0.25"
+            filter="url(#blur2)"
+          >
+            <animate
+              attributeName="d"
+              dur="22s"
+              repeatCount="indefinite"
+              values="M0,500 Q360,520 720,500 T1440,500;
+                      M0,510 Q360,490 720,510 T1440,510;
+                      M0,500 Q360,520 720,500 T1440,500"
+            />
+          </path>
+        </svg>
+      </div>
+
       <header className="sticky top-0 z-40 border-b border-zinc-800 bg-[#1c1c1c]/90 backdrop-blur-md">
         <div className="container flex h-20 items-center justify-between py-4">
           <div className="flex items-center gap-2">
@@ -323,7 +448,7 @@ export default function LandingPage() {
             </button>
           </nav>
           <Button
-            onClick={() => window.location.href = "https://syconsulting.co/client"}
+            onClick={() => (window.location.href = "https://syconsulting.co/client")}
             className="bg-zinc-800 text-white hover:bg-zinc-700 border-none"
           >
             <LogIn className="mr-2 h-4 w-4" />
@@ -331,7 +456,7 @@ export default function LandingPage() {
           </Button>
         </div>
       </header>
-      <main className="flex-1">
+      <main className="flex-1 relative z-10">
         <section className="w-full py-20 md:py-28 lg:py-36 border-b border-zinc-800">
           <div className="container px-4 md:px-6">
             <div className="grid gap-10 lg:grid-cols-2 lg:gap-16 items-center">
@@ -470,91 +595,109 @@ export default function LandingPage() {
           </div>
         </section>
 
-        <section id="clients" className="w-full py-20 md:py-28 border-b border-zinc-800">
-          <div className="container px-4 md:px-6">
-            <div className="mx-auto flex max-w-[800px] flex-col items-start space-y-4 mb-12">
-              <h2 className="text-3xl font-light tracking-tight sm:text-4xl">Our Clients</h2>
-              <p className="max-w-[600px] text-zinc-400 text-lg font-light">
-                Trusted by leading local businesses across various industries
+        <section id="clients" className="w-full py-20 md:py-32 border-b border-zinc-800 relative overflow-hidden">
+          <div className="container px-4 md:px-6 relative z-10">
+            <div className="mx-auto flex max-w-[900px] flex-col items-start space-y-6 mb-20">
+              <div className="h-1 w-20 bg-white"></div>
+              <h2 className="text-4xl font-light tracking-tight sm:text-5xl md:text-6xl">Client Success Stories</h2>
+              <p className="max-w-[700px] text-zinc-400 text-xl font-light leading-relaxed">
+                Trusted partnerships with local businesses driving measurable, transformative results
               </p>
             </div>
 
-            <div className="mx-auto max-w-5xl">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-16 items-center justify-items-center">
-                <div className="border border-zinc-800 p-8 w-full h-full flex items-center justify-center hover:border-zinc-600 transition-all">
-                  <Image
-                    src="/clients/wagonwheel.png"
-                    width={140}
-                    height={70}
-                    alt="Client Logo"
-                    className="h-12 w-auto opacity-70 transition-all hover:opacity-100"
-                  />
-                </div>
-                <div className="border border-zinc-800 p-8 w-full h-full flex items-center justify-center hover:border-zinc-600 transition-all">
-                  <Image
-                    src="/clients/merrygorounds.png"
-                    width={140}
-                    height={70}
-                    alt="Client Logo"
-                    className="h-12 w-auto opacity-70 transition-all hover:opacity-100"
-                  />
-                </div>
-                <div className="border border-zinc-800 p-8 w-full h-full flex items-center justify-center hover:border-zinc-600 transition-all">
-                  <Image
-                    src="/clients/sakura.png"
-                    width={140}
-                    height={70}
-                    alt="Client Logo"
-                    className="h-12 w-auto opacity-70 transition-all hover:opacity-100"
-                  />
+            <div className="mx-auto max-w-7xl space-y-8">
+              {/* Wagon Wheel Cafe */}
+              <div className="relative group">
+                <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center border border-zinc-800 group-hover:border-white/30 p-10 lg:p-12 bg-zinc-950/50 backdrop-blur-sm transition-all duration-300 rounded-lg">
+                  <div className="lg:col-span-4 flex justify-center lg:justify-start">
+                    <div className="relative bg-white/5 p-8 rounded-lg border border-zinc-800 group-hover:border-white/30 transition-all">
+                      <Image
+                        src="/clients/wagonwheel.png"
+                        width={280}
+                        height={140}
+                        alt="Wagon Wheel Cafe"
+                        className="w-full h-auto opacity-90 group-hover:opacity-100 transition-all"
+                      />
+                    </div>
+                  </div>
+                  <div className="lg:col-span-8 space-y-6">
+                    <div className="flex items-start gap-4">
+                      <div className="flex-shrink-0 w-1 h-full bg-zinc-800"></div>
+                      <div className="space-y-4">
+                        <blockquote className="text-xl lg:text-2xl text-white font-light leading-relaxed">
+                          "S&Y helped us refine our strategy and significantly increase foot traffic — their insights
+                          were invaluable."
+                        </blockquote>
+                        <div className="flex flex-col gap-1 pt-4">
+                          <div className="font-medium text-white text-lg">Maya Thompson</div>
+                          <div className="text-zinc-400 text-sm tracking-wide">Owner, Wagon Wheel Cafe</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
 
-        <section id="testimonials" className="w-full py-20 md:py-28 border-b border-zinc-800">
-          <div className="container px-4 md:px-6">
-            <div className="mx-auto flex max-w-[800px] flex-col items-start space-y-4 mb-12">
-              <h2 className="text-3xl font-light tracking-tight sm:text-4xl">Testimonials</h2>
-              <p className="max-w-[600px] text-zinc-400 text-lg font-light">
-                Hear from local business leaders we've helped.
-              </p>
-            </div>
-
-            <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-3">
-              <blockquote className="border border-zinc-800 p-6 bg-[#111111]">
-                <p className="text-zinc-300 font-light mb-4">“S&Y helped us refine our strategy and significantly increase foot traffic — their insights were invaluable.”</p>
-                <div className="flex items-center gap-3">
-                  <Image src="/clients/wagonwheel.png" width={48} height={48} alt="Wagon Wheel" className="h-12 w-auto" />
-                  <div>
-                    <div className="font-medium">Maya Thompson</div>
-                    <div className="text-zinc-500 text-sm">Owner, Wagon Wheel Cafe</div>
+              {/* Merry Go Rounds */}
+              <div className="relative group">
+                <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center border border-zinc-800 group-hover:border-white/30 p-10 lg:p-12 bg-zinc-950/50 backdrop-blur-sm transition-all duration-300 rounded-lg">
+                  <div className="lg:col-span-4 flex justify-center lg:justify-start">
+                    <div className="relative bg-white/5 p-8 rounded-lg border border-zinc-800 group-hover:border-white/30 transition-all">
+                      <Image
+                        src="/clients/merrygorounds.png"
+                        width={280}
+                        height={140}
+                        alt="Merry Go Rounds"
+                        className="w-full h-auto opacity-90 group-hover:opacity-100 transition-all"
+                      />
+                    </div>
+                  </div>
+                  <div className="lg:col-span-8 flex items-center">
+                    <div className="flex items-center gap-4">
+                      <div className="w-1 h-16 bg-zinc-800"></div>
+                      <div className="space-y-2">
+                        <p className="text-zinc-400 font-light text-lg italic">Trusted client partner</p>
+                        <div className="flex gap-2">
+                          <div className="w-2 h-2 rounded-full bg-zinc-800/50"></div>
+                          <div className="w-2 h-2 rounded-full bg-zinc-800/30"></div>
+                          <div className="w-2 h-2 rounded-full bg-zinc-800/20"></div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </blockquote>
+              </div>
 
-              <blockquote className="border border-zinc-800 p-6 bg-[#111111]">
-                <p className="text-zinc-300 font-light mb-4">“Their financial recommendations helped stabilize our cash flow and improved our profitability within months.”</p>
-                <div className="flex items-center gap-3">
-                  <Image src="/clients/merrygorounds.png" width={48} height={48} alt="Merry Go Rounds" className="h-12 w-auto" />
-                  <div>
-                    <div className="font-medium">Carlos Rivera</div>
-                    <div className="text-zinc-500 text-sm">Founder, Merry Go Rounds</div>
+              {/* Sakura Bistro */}
+              <div className="relative group">
+                <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center border border-zinc-800 group-hover:border-white/30 p-10 lg:p-12 bg-zinc-950/50 backdrop-blur-sm transition-all duration-300 rounded-lg">
+                  <div className="lg:col-span-4 flex justify-center lg:justify-start">
+                    <div className="relative bg-white/5 p-8 rounded-lg border border-zinc-800 group-hover:border-white/30 transition-all">
+                      <Image
+                        src="/clients/sakura.png"
+                        width={280}
+                        height={140}
+                        alt="Sakura Bistro"
+                        className="w-full h-auto opacity-90 group-hover:opacity-100 transition-all"
+                      />
+                    </div>
+                  </div>
+                  <div className="lg:col-span-8 space-y-6">
+                    <div className="flex items-start gap-4">
+                      <div className="flex-shrink-0 w-1 h-full bg-zinc-800"></div>
+                      <div className="space-y-4">
+                        <blockquote className="text-xl lg:text-2xl text-white font-light leading-relaxed">
+                          "Their market analysis gave us the confidence to expand — we saw measurable results quickly."
+                        </blockquote>
+                        <div className="flex flex-col gap-1 pt-4">
+                          <div className="font-medium text-white text-lg">Aiko Tanaka</div>
+                          <div className="text-zinc-400 text-sm tracking-wide">Owner, Sakura Bistro</div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </blockquote>
-
-              <blockquote className="border border-zinc-800 p-6 bg-[#111111]">
-                <p className="text-zinc-300 font-light mb-4">“Their market analysis gave us the confidence to expand — we saw measurable results quickly.”</p>
-                <div className="flex items-center gap-3">
-                  <Image src="/clients/sakura.png" width={48} height={48} alt="Sakura" className="h-12 w-auto" />
-                  <div>
-                    <div className="font-medium">Aiko Tanaka</div>
-                    <div className="text-zinc-500 text-sm">Owner, Sakura Bistro</div>
-                  </div>
-                </div>
-              </blockquote>
+              </div>
             </div>
           </div>
         </section>
@@ -579,7 +722,8 @@ export default function LandingPage() {
                 <h3 className="text-2xl font-light">Neil Shah</h3>
                 <p className="text-zinc-400 font-light mb-4">Co-Founder & Managing Partner</p>
                 <p className="text-zinc-500 font-light max-w-sm">
-                As the prior TYE Chairman and Business Development Manager, Neil drives growth strategies that deliver real impact for local businesses.
+                  As the prior TYE Chairman and Business Development Manager, Neil drives growth strategies that deliver
+                  real impact for local businesses.
                 </p>
               </div>
               <div className="group flex flex-col items-center text-center">
@@ -704,4 +848,3 @@ export default function LandingPage() {
     </div>
   )
 }
-
