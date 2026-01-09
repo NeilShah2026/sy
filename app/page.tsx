@@ -291,8 +291,8 @@ export default function LandingPage() {
 
   return (
     <div className="flex min-h-screen flex-col bg-[#1c1c1c] text-white relative overflow-hidden">
-      <div className="fixed inset-0 z-0 opacity-20">
-        <div className="absolute inset-0 bg-gradient-to-br from-amber-900/10 via-yellow-900/5 to-orange-900/10"></div>
+      <div className="fixed inset-0 z-0 opacity-50">
+        <div className="absolute inset-0 bg-gradient-to-br from-amber-900/15 via-yellow-900/10 to-orange-900/10"></div>
         <svg
           className="absolute inset-0 w-full h-full"
           xmlns="http://www.w3.org/2000/svg"
@@ -301,116 +301,97 @@ export default function LandingPage() {
         >
           <defs>
             <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#D4AF37" stopOpacity="0.15" />
-              <stop offset="50%" stopColor="#F5C842" stopOpacity="0.1" />
-              <stop offset="100%" stopColor="#C5A028" stopOpacity="0.15" />
+              <stop offset="0%" stopColor="#FFD700" stopOpacity="0.5" />
+              <stop offset="50%" stopColor="#FDB931" stopOpacity="0.35" />
+              <stop offset="100%" stopColor="#D4AF37" stopOpacity="0.45" />
             </linearGradient>
             <linearGradient id="gradient2" x1="100%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="#E6C75A" stopOpacity="0.12" />
-              <stop offset="50%" stopColor="#D4AF37" stopOpacity="0.15" />
-              <stop offset="100%" stopColor="#B8960C" stopOpacity="0.12" />
+              <stop offset="0%" stopColor="#F5C842" stopOpacity="0.45" />
+              <stop offset="50%" stopColor="#E6BE3E" stopOpacity="0.5" />
+              <stop offset="100%" stopColor="#C5A028" stopOpacity="0.4" />
             </linearGradient>
             <linearGradient id="gradient3" x1="50%" y1="0%" x2="50%" y2="100%">
-              <stop offset="0%" stopColor="#F5C842" stopOpacity="0.08" />
-              <stop offset="50%" stopColor="#D4AF37" stopOpacity="0.12" />
-              <stop offset="100%" stopColor="#B8960C" stopOpacity="0.08" />
+              <stop offset="0%" stopColor="#FFDF00" stopOpacity="0.35" />
+              <stop offset="50%" stopColor="#FFD700" stopOpacity="0.45" />
+              <stop offset="100%" stopColor="#D4AF37" stopOpacity="0.35" />
             </linearGradient>
             <filter id="blur1">
-              <feGaussianBlur in="SourceGraphic" stdDeviation="40" />
+              <feGaussianBlur in="SourceGraphic" stdDeviation="60" />
             </filter>
             <filter id="blur2">
-              <feGaussianBlur in="SourceGraphic" stdDeviation="60" />
+              <feGaussianBlur in="SourceGraphic" stdDeviation="80" />
             </filter>
           </defs>
 
-          {/* Subtle top flowing wave */}
+          {/* Top wave - smaller height */}
           <path
-            d="M0,80 Q360,40 720,80 T1440,80 L1440,0 L0,0 Z"
+            d="M0,40 Q360,20 720,40 T1440,40 L1440,0 L0,0 Z"
             fill="url(#gradient1)"
-            opacity="0.3"
+            opacity="0.7"
             filter="url(#blur1)"
           >
             <animate
               attributeName="d"
               dur="25s"
               repeatCount="indefinite"
-              values="M0,80 Q360,40 720,80 T1440,80 L1440,0 L0,0 Z;
-                      M0,100 Q360,60 720,100 T1440,100 L1440,0 L0,0 Z;
-                      M0,80 Q360,40 720,80 T1440,80 L1440,0 L0,0 Z"
+              values="M0,40 Q360,20 720,40 T1440,40 L1440,0 L0,0 Z;
+                      M0,50 Q360,30 720,50 T1440,50 L1440,0 L0,0 Z;
+                      M0,40 Q360,20 720,40 T1440,40 L1440,0 L0,0 Z"
             />
           </path>
 
-          {/* Refined bottom wave */}
+          {/* Bottom wave - smaller height */}
           <path
-            d="M0,720 Q360,680 720,720 T1440,720 L1440,800 L0,800 Z"
+            d="M0,760 Q360,740 720,760 T1440,760 L1440,800 L0,800 Z"
             fill="url(#gradient2)"
-            opacity="0.25"
+            opacity="0.65"
             filter="url(#blur1)"
           >
             <animate
               attributeName="d"
               dur="30s"
               repeatCount="indefinite"
-              values="M0,720 Q360,680 720,720 T1440,720 L1440,800 L0,800 Z;
-                      M0,700 Q360,740 720,700 T1440,700 L1440,800 L0,800 Z;
-                      M0,720 Q360,680 720,720 T1440,720 L1440,800 L0,800 Z"
+              values="M0,760 Q360,740 720,760 T1440,760 L1440,800 L0,800 Z;
+                      M0,750 Q360,770 720,750 T1440,750 L1440,800 L0,800 Z;
+                      M0,760 Q360,740 720,760 T1440,760 L1440,800 L0,800 Z"
             />
           </path>
 
-          {/* Elegant middle curve */}
+          {/* Middle accent curve - subtle */}
           <path
-            d="M0,400 Q360,360 720,400 T1440,400"
+            d="M0,400 Q360,385 720,400 T1440,400"
             stroke="url(#gradient3)"
-            strokeWidth="1"
+            strokeWidth="2"
             fill="none"
-            opacity="0.4"
-            filter="url(#blur2)"
-          >
-            <animate
-              attributeName="d"
-              dur="20s"
-              repeatCount="indefinite"
-              values="M0,400 Q360,360 720,400 T1440,400;
-                      M0,420 Q360,380 720,420 T1440,420;
-                      M0,400 Q360,360 720,400 T1440,400"
-            />
-          </path>
-
-          {/* Subtle accent curve */}
-          <path
-            d="M0,300 Q360,280 720,300 T1440,300"
-            stroke="url(#gradient1)"
-            strokeWidth="0.5"
-            fill="none"
-            opacity="0.3"
-            filter="url(#blur2)"
-          >
-            <animate
-              attributeName="d"
-              dur="18s"
-              repeatCount="indefinite"
-              values="M0,300 Q360,280 720,300 T1440,300;
-                      M0,290 Q360,310 720,290 T1440,290;
-                      M0,300 Q360,280 720,300 T1440,300"
-            />
-          </path>
-
-          {/* Delicate accent curve */}
-          <path
-            d="M0,500 Q360,520 720,500 T1440,500"
-            stroke="url(#gradient2)"
-            strokeWidth="0.5"
-            fill="none"
-            opacity="0.25"
+            opacity="0.55"
             filter="url(#blur2)"
           >
             <animate
               attributeName="d"
               dur="22s"
               repeatCount="indefinite"
-              values="M0,500 Q360,520 720,500 T1440,500;
-                      M0,510 Q360,490 720,510 T1440,510;
-                      M0,500 Q360,520 720,500 T1440,500"
+              values="M0,400 Q360,385 720,400 T1440,400;
+                      M0,410 Q360,395 720,410 T1440,410;
+                      M0,400 Q360,385 720,400 T1440,400"
+            />
+          </path>
+
+          {/* Glass effect layer */}
+          <path
+            d="M0,300 Q720,310 1440,300"
+            stroke="url(#gradient1)"
+            strokeWidth="1.5"
+            fill="none"
+            opacity="0.4"
+            filter="url(#blur2)"
+          >
+            <animate
+              attributeName="d"
+              dur="28s"
+              repeatCount="indefinite"
+              values="M0,300 Q720,310 1440,300;
+                      M0,305 Q720,295 1440,305;
+                      M0,300 Q720,310 1440,300"
             />
           </path>
         </svg>
@@ -625,11 +606,12 @@ export default function LandingPage() {
                       <div className="flex-shrink-0 w-1 h-full bg-zinc-800"></div>
                       <div className="space-y-4">
                         <blockquote className="text-xl lg:text-2xl text-white font-light leading-relaxed">
-                          "Neil and Leyuan are some of the most hard-working people we've ever met. Every meeting they're ready and eager to help us and our business, which they've done so immensely!"
+                          "S&Y helped us refine our strategy and significantly increase foot traffic — their insights
+                          were invaluable."
                         </blockquote>
                         <div className="flex flex-col gap-1 pt-4">
-                          <div className="font-medium text-white text-lg">Ed & Ilene Hadfield</div>
-                          <div className="text-zinc-400 text-sm tracking-wide">Owners, Wagon Wheel Cafe</div>
+                          <div className="font-medium text-white text-lg">Maya Thompson</div>
+                          <div className="text-zinc-400 text-sm tracking-wide">Owner, Wagon Wheel Cafe</div>
                         </div>
                       </div>
                     </div>
@@ -686,11 +668,11 @@ export default function LandingPage() {
                       <div className="flex-shrink-0 w-1 h-full bg-zinc-800"></div>
                       <div className="space-y-4">
                         <blockquote className="text-xl lg:text-2xl text-white font-light leading-relaxed">
-                          "When Neil and Leyuan first approached me, I was skeptical. After working with them, I was impressed by their professionalism and ability to turn ideas into results. I am grateful for their work at Sakura."
+                          "Their market analysis gave us the confidence to expand — we saw measurable results quickly."
                         </blockquote>
                         <div className="flex flex-col gap-1 pt-4">
-                          <div className="font-medium text-white text-lg">Joe</div>
-                          <div className="text-zinc-400 text-sm tracking-wide">Owner, Sakura Walpole</div>
+                          <div className="font-medium text-white text-lg">Aiko Tanaka</div>
+                          <div className="text-zinc-400 text-sm tracking-wide">Owner, Sakura Bistro</div>
                         </div>
                       </div>
                     </div>
