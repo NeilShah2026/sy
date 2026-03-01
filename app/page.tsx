@@ -606,11 +606,10 @@ export default function LandingPage() {
                       <div className="flex-shrink-0 w-1 h-full bg-zinc-800"></div>
                       <div className="space-y-4">
                         <blockquote className="text-xl lg:text-2xl text-white font-light leading-relaxed">
-                          "S&Y helped us refine our strategy and significantly increase foot traffic — their insights
-                          were invaluable."
+                          "Neil & Leyuan did a amazing job of helping us with out social media and increasing the number of diners!"
                         </blockquote>
                         <div className="flex flex-col gap-1 pt-4">
-                          <div className="font-medium text-white text-lg">Maya Thompson</div>
+                          <div className="font-medium text-white text-lg">Ed & Ilene</div>
                           <div className="text-zinc-400 text-sm tracking-wide">Owner, Wagon Wheel Cafe</div>
                         </div>
                       </div>
@@ -668,7 +667,7 @@ export default function LandingPage() {
                       <div className="flex-shrink-0 w-1 h-full bg-zinc-800"></div>
                       <div className="space-y-4">
                         <blockquote className="text-xl lg:text-2xl text-white font-light leading-relaxed">
-                          "Their market analysis gave us the confidence to expand — we saw measurable results quickly."
+                          "S&Y helped us redo our online presence and found ways to help us stand out."
                         </blockquote>
                         <div className="flex flex-col gap-1 pt-4">
                           <div className="font-medium text-white text-lg">Aiko Tanaka</div>
